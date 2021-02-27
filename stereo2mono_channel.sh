@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 SECONDS=0
-today=$(date +'%d%m%Y')
 
 inputdir=$1/*.wav
 outputdir=$2_mono_${today}
