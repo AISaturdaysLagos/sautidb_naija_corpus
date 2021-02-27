@@ -3,13 +3,15 @@
 SECONDS=0
 
 inputdir=$1/*.wav
-outputdir=$2_normalized_${today}
+outputdir=$2
 
 # create output folder
 mkdir -p ${outputdir}
 
 # normalization db
-db=-0.1
+default=-0.1
+db=${3-$default}
+
 
 for file in ${inputdir}
 do	
