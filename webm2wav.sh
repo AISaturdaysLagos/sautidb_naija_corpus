@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 SECONDS=0
-today=$(date +'%d%m%Y')
 
 # input webms files
 inputdir=$1/*.webm
