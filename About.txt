@@ -1,0 +1,27 @@
+The SautiDB dataset collection project (https://sautidb.web.app/) is an ongoing effort to collect dataset of various Nigerian accents. 
+
+The filename has the form nativeLanguage_fluentLanguage_speakerID_gender_sentenceID.wav where
+nativeLanguage: Language spoken by the speaker's tribe. Native (mother) language of the speaker
+fluentLanguage: Language that the speaker thinks best describe their accents
+speakerID: ID assigned to speakers. Kindly note that it's possible that one speaker maps multiple IDs. 
+This is because the speakers are not required to login to the system, we simply cache their browser session to recognize their subsequent uploads
+gender: Gender of the speaker. Kindly note that we did not collect this information from the speakers, we hand-labelled this.
+sentenceID: The sentence ID for the read sentences. We used the CMU Arctic sentences and can be found on http://www.festvox.org/cmu_arctic/cmuarctic.data
+
+===========================
+Before Preprocessing:
+===========================
+Number of Samples: 1615
+Size Webm: 59MB
+Size Wav: 847MB
+Sampling Rate: 48000Hz
+Total Time: 2hrs 30min 21sec
+
+
+============================
+After Preprocessing
+============================
+Number of Samples: 919
+Size Wav: 336MB
+Sampling Rate: 48000Hz
+Total Time: 0hrs 59min 08sec
