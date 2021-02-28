@@ -3,7 +3,7 @@
 SECONDS=0
 
 inputdir=$1/*.wav
-outputdir=$2_no_silence_${today}
+outputdir=$2
 
 # create output folder
 mkdir -p ${outputdir}
@@ -16,7 +16,7 @@ do
 	# (b) reverse silence 1 441 0.1% reverse: Reverse the samples and repeate (a) with 0.1% of the max level, then reverse samples back 
 	# I reduced reverse threshold to 0.1% to reduce the abrupt end in sentence that I observed when the threshold was set to 3%
 
-	sox  "${file}" ${outputdir}/"${outputfilename}" silence 1 441 3% reverse silence 1 441 0.1% reverse; 
+	sox  "${file}" ${outputdir}/"${outputfilename}" silence 1 441 1% reverse silence 1 441 0.1% reverse; 
 done
 
 

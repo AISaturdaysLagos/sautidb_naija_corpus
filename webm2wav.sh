@@ -6,7 +6,7 @@ SECONDS=0
 inputdir=$1/*.webm
 
 # output wav files
-outputdir=$2_wavs_$today
+outputdir=$2
 
 mkdir -p ${outputdir}
 

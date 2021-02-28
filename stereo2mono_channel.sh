@@ -3,7 +3,7 @@
 SECONDS=0
 
 inputdir=$1/*.wav
-outputdir=$2_mono_${today}
+outputdir=$2
 
 # create output folder
 mkdir -p ${outputdir}
