@@ -1,0 +1,8 @@
+# sum audio durations in current dir (and below) in H:m:s, using sox
+find . -name "*.wav" -exec soxi -D {} \; | awk '{SUM +=$1} END { printf "%d:%d:%d\n",SUM/3600,SUM%3600/60,SUM%60}'
+
+# copy files from .txt (which contains the filepath) to another folder
+mkdir -p new_folder
+cat file.txt | xargs -I{} cp {} new_folder
+
+
