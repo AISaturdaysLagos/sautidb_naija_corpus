@@ -31,13 +31,15 @@ outputdir=sautidb_wavs_$today
 
 inputdir=sautidb_wavs_$today
 outputdir=sautidb_reduced_$today
-filenames=sautidb_filename.txt
+filenames=sautidb_filename.csv
 # [[ ! -f $filenames ]] && echo "$filenames does not exist!"
 # [[ ! -d $inputdir ]] && echo "$inputdir does not exist!" 
 
 mkdir -p $outputdir
 cat $filenames | xargs -I{} cp $inputdir/{} $outputdir
 
+# Remove old folders for space
+rm -rf $inputdir 
 
 ##################################################################################################
 # NORMALIZE AUDIO SAMPLES
@@ -46,6 +48,9 @@ inputdir=sautidb_reduced_$today
 outputdir=sautidb_normalize_$today
 db=-0.1
 . normalize.sh $inputdir $outputdir $db
+
+# Remove old folders for space
+rm -rf $inputdir 
 
 
 ##################################################################################################
@@ -56,13 +61,20 @@ outputdir=sautidb_nosilence_$today
 . remove_leading_trailing_silence.sh $inputdir $outputdir
 
 
+# Remove old folders for space
+rm -rf $inputdir 
+
+
 ##################################################################################################
 # RENAME AUDIO FILES TO FILENAME CONTAINING THE AUDIO METADATA INFORMATION 
 ##################################################################################################
 
 inputdir=sautidb_nosilence_$today
 outputdir=sautidb_released_$today
-rename_filenames=sautidb_filenames_rename.csv
+rename_filenames=sautidb_filename_newname.csv
 
 mkdir -p $outputdir
 sed 's/"//g' $rename_filenames | while IFS=, read orig new; do cp $inputdir/"$orig" $outputdir/"$new"; done
+
+# Remove old folders for space
+rm -rf $inputdir 
