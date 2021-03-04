@@ -2,6 +2,10 @@
 Pre-processing scripts for SautiDB dataset. A dataset for the Accent Translation project.
 
 
+# Dataset
+You can download the dataset on <a rel="dataset" href="https://zenodo.org/record/4561842#.YEE_MpNKhGo">Zenodo</a>.
+
+
 
 # LICENSE
 
