@@ -1,0 +1,43 @@
+The SautiDB dataset collection project (https://sautidb.web.app/) is an ongoing effort to collect dataset of various Nigerian accents. 
+
+The filename has the form nativeLanguage_fluentLanguage_speakerID_gender_sentenceID.wav where
+nativeLanguage: Language spoken by the speaker's tribe. Native (mother) language of the speaker
+fluentLanguage: Language that the speaker thinks best describe their accents
+speakerID: ID assigned to speakers. Kindly note that it's possible that one speaker maps multiple IDs. 
+This is because the speakers are not required to login to the system, we simply cache their browser session to recognize their subsequent uploads
+gender: Gender of the speaker. Kindly note that we did not collect this information from the speakers, we hand-labelled this.
+sentenceID: The sentence ID for the read sentences. We used the CMU Arctic sentences and can be found on http://www.festvox.org/cmu_arctic/cmuarctic.data
+
+===========================
+Before Preprocessing:
+===========================
+Number of Samples: 1615
+Size Webm: 59MB
+Size Wav: 847MB
+Sampling Rate: 48000Hz
+Total Time: 2hrs 30min 21sec
+
+
+============================
+After Preprocessing
+============================
+Number of Samples: 919
+Size Wav: 336MB
+Sampling Rate: 48000Hz
+Total Time: 0hrs 59min 08sec
+
+
+============================
+Version 1.1
+============================
+This version has two updates:
+
+1. In version 1.0, the naming convention for each language was to space each language with an underscore and uppercased, e.g., "Efik Ibibio" -> "EFIK_IBIBIO". 
+In hindsight, this was not ideal, as the filename was also joined with an underscore: 'nativeLanguage_fluentLanguage_speakerID_gender_sentenceID.wav'. 
+This can cause errors for users who are not aware of it. For example, consider the filename 'EFIK_IBIBIO_EFIK_IBIBIO_0014_M_A0138.wav'. 
+A user who splits the filename by an underscore could unknowingly have 'nativeLanguage= EFIK' and 'fluentLanguage=IBIBIO', which would result in an error in their analysis. 
+This version fixes that error. We have changed "EFIK_IBIBIO" -> "EFIKIBIBIO". i.e. the file name, which was previously 'EFIKIBIBIO_EFIKIBIBIO_0014_M_A0138.wav', has now been changed to 'EFIKIBIBIO_EFIKIBIBIO_0014_M_A0138.wav'. 
+This change applies only to languages that contain spaces. The rest of the filenames therefore remain unchanged, i.e. 'EDO_YORUBA_0053_M_B0389.wav' is still 'EDO_YORUBA_0053_M_B0389.wav'.
+
+2. We include an audio_metadata.csv file containing 'filename', 'nativeLanguage', 'fluentLanguage', 'speakerID', 'gender', 'sentenceID' and 'sentence', 'duration'. 
+We hope this will make it easier for users to use our dataset for their work. The duration was calculated using the function 'librosa.get_duration()'.
