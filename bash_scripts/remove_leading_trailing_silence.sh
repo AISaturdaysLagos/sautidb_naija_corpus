@@ -12,7 +12,7 @@ for file in ${inputdir}
 do	
 	outputfilename="$(basename $file)"
 
-	# (a) silence 1 441 3% : Remove silence at the beginning until at least 441 samples above 3% of the max level are detected
+	# (a) silence 1 441 1% : Remove silence at the beginning until at least 441 samples above 1% of the max level are detected
 	# (b) reverse silence 1 441 0.1% reverse: Reverse the samples and repeate (a) with 0.1% of the max level, then reverse samples back 
 	# I reduced reverse threshold to 0.1% to reduce the abrupt end in sentence that I observed when the threshold was set to 3%
 
