@@ -1,6 +1,8 @@
 today=$(date +'%d%m%Y')
 
-inputdir=../sauti_webms
+bash_scripts=../bash_scripts
+
+inputdir=sauti_webms
 outputdir=sautidb_wavs_$today
 
 ### TODO: Implement error handling. Current solution found always exit the terminal but I would prefer a solution that doesn't do that
@@ -9,7 +11,7 @@ outputdir=sautidb_wavs_$today
 # CONVERT WEBM TO WAV 
 ##################################################################################################
 
-. webm2wav.sh $inputdir $outputdir
+. $bash_scripts/webm2wav.sh $inputdir $outputdir
 
 
 ##################################################################################################
@@ -47,7 +49,7 @@ rm -rf $inputdir
 inputdir=sautidb_reduced_$today
 outputdir=sautidb_normalize_$today
 db=-0.1
-. normalize.sh $inputdir $outputdir $db
+. $bash_scripts/normalize.sh $inputdir $outputdir $db
 
 # Remove old folders for space
 rm -rf $inputdir 
@@ -58,7 +60,7 @@ rm -rf $inputdir
 ##################################################################################################
 inputdir=sautidb_normalize_$today
 outputdir=sautidb_nosilence_$today
-. remove_leading_trailing_silence.sh $inputdir $outputdir
+. $bash_scripts/remove_leading_trailing_silence.sh $inputdir $outputdir
 
 
 # Remove old folders for space
