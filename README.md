@@ -1,5 +1,5 @@
 # Sautidb Preprocessing Scripts
-Pre-processing scripts for SautiDB dataset. A dataset for the Accent Translation project.
+Pre-processing scripts for SautiDB dataset. Accented speech corpus curated by [TheSautiProject](sautiproject.com) team, intended for accent translation tasks.
 
 
 # Dataset
