@@ -6,3 +6,5 @@ mkdir -p new_folder
 cat file.txt | xargs -I{} cp {} new_folder
 
 
+# calculate size of file in directory
+du -sh .
