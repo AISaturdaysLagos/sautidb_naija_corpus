@@ -1,5 +1,5 @@
-# Sautidb Preprocessing Scripts
-Pre-processing scripts for SautiDB dataset. Accented speech corpus curated by [TheSautiProject](sautiproject.com) team, intended for accent translation tasks.
+# Sautidb-Naija Corpus
+This repository contains the pre-processing scripts for the SautiDB-Naija corpus, an accented speech corpus curated by [TheSautiProject](sautiproject.com) team, intended for accent translation tasks.
 
 
 # Dataset
